@@ -18,8 +18,8 @@ POST {{beginURL}}/brouwers
 content-type: application/json
 
 {
-  "naam" : "Bios",
-  "postcode":9940,
+  "naam" : "Test",
+  "postcode":10,
   "gemeente":"Ertvelde"
 }
 
