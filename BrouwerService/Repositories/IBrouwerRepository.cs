@@ -4,10 +4,10 @@ namespace BrouwerService.Repositories;
 
 public interface IBrouwerRepository
 {
-    IQueryable<Brouwer> FindAll();
-    Brouwer? FindById(int id);
-    IQueryable<Brouwer> FindByBeginNaam(string begin);
-    void Update(Brouwer brouwer);
-    void Delete(Brouwer brouwer);
-    void Insert(Brouwer brouwer);
+    Task<List<Brouwer>> FindAllAsync();
+    Task<Brouwer?> FindByIdAsync(int id);
+    Task<List<Brouwer>> FindByBeginNaamAsync(string begin);
+    Task UpdateAsync(Brouwer brouwer);
+    Task DeleteAsync(Brouwer brouwer);
+    Task InsertAsync(Brouwer brouwer);
 }
