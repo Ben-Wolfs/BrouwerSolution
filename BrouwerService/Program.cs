@@ -12,6 +12,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<BierlandContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("bierland")));
 builder.Services.AddScoped<IBrouwerRepository, BrouwerRepository>();
+builder.Services.AddScoped<IFiliaalRepository, FiliaalRepository>();
 
 var app = builder.Build();
 
