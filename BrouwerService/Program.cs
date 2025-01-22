@@ -14,6 +14,8 @@ builder.Services.AddDbContext<BierlandContext>(options => options.UseSqlServer(b
 builder.Services.AddScoped<IBrouwerRepository, BrouwerRepository>();
 builder.Services.AddScoped<IFiliaalRepository, FiliaalRepository>();
 
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +24,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Brouwers"));
 }
+
+app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader());
 
 app.UseAuthorization();
 
